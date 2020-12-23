@@ -1,7 +1,5 @@
-package com.github.pethome.repository
+package com.github.pethome.common.base
 
-import com.github.pethome.domain.BaseDomain
-import com.github.pethome.dto.BaseDTO
 import com.vip.vjtools.vjkit.mapper.BeanMapper
 
 /**

@@ -1,6 +1,6 @@
 package com.github.pethome.domain.user
 
-import com.github.pethome.domain.BaseDomain
+import com.github.pethome.common.base.BaseDomain
 import java.time.LocalDateTime
 import javax.persistence.Table
 

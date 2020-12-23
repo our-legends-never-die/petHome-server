@@ -1,5 +1,6 @@
 package com.github.pethome.domain
 
+import com.github.pethome.common.base.BaseDomain
 import javax.persistence.Table
 
 /**

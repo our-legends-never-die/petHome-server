@@ -1,6 +1,6 @@
 package com.github.pethome.dto.user
 
-import com.github.pethome.dto.BaseDTO
+import com.github.pethome.common.base.BaseDTO
 import java.time.LocalDateTime
 
 /**
