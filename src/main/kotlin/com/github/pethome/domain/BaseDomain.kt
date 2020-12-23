@@ -10,6 +10,17 @@ import javax.persistence.Id
  */
 open class BaseDomain {
 
+    constructor(id: Long?, gmtCreate: LocalDateTime?, creatorId: Long?, gmtModified: LocalDateTime?, modifierId: Long?, delFlag: Boolean?) {
+        this.id = id
+        this.gmtCreate = gmtCreate
+        this.creatorId = creatorId
+        this.gmtModified = gmtModified
+        this.modifierId = modifierId
+        this.delFlag = delFlag
+    }
+
+    constructor()
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
