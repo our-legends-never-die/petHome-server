@@ -1,7 +1,5 @@
 package com.github.pethome.common.base
 
-import com.vip.vjtools.vjkit.mapper.BeanMapper
-
 /**
  * @author Chimm Huang
  */
@@ -61,7 +59,7 @@ interface BaseRepo<DO : BaseDomain, DTO : BaseDTO> {
      * @param ids 主键id List
      * @return 返回成功条数
      */
-    fun deleteBatch(ids: List<Long>)
+    fun deleteBatch(ids: List<Long>?)
 
     /**
      * 根据id修改
@@ -125,14 +123,4 @@ interface BaseRepo<DO : BaseDomain, DTO : BaseDTO> {
      * @return 返回对象列表
      */
     fun selectByIdList(ids: List<Long>): List<DTO>
-
-    /**
-     * 复制List
-     * @param from List
-     * @param to 目标Class
-     * @return 返回目标Class的列表
-     */
-    fun <F, O> copy(from: List<F>, to: Class<O>): List<O> {
-        return BeanMapper.mapList(from, to)
-    }
 }
