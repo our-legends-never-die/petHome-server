@@ -1,0 +1,14 @@
+server:
+  port: 10001
+
+spring:
+  application:
+    name: petHome-mobile-bff
+
+# ===== 自定义swagger配置 ===== #
+swagger:
+  enable: true
+  application-name: 爱宠回家
+  application-version: 1.0
+  application-description: 爱宠回家移动端接口文档
+  try-host: http://localhost:${server.port}
