@@ -1,9 +1,27 @@
 server:
   port: 10101
+  servlet:
+    context-path: /petHome-provider
+    session:
+      timeout: 7200s
 
 spring:
   application:
     name: petHome-provider
+
+  # consul
+  cloud:
+    consul:
+      discovery:
+        health-check-path: ${server.servlet.context-path}/health  # 检测实例健康
+        health-check-interval: 10s   # 每隔10s检查
+        hostname: localhost    # 配置实例地址
+        register: true  # 自动注册
+        service-name: ${spring.application.name} # 实例名称
+        instanceId: ${spring.application.name}:${server.port}:${random.value}:${random.int[1,1000000]}
+        prefer-ip-address: true
+      host: localhost
+      port: 8500
 
   # data-base
   datasource:
