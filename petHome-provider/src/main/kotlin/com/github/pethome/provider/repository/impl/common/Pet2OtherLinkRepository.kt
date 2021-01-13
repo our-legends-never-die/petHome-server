@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository
  * @author Chimm Huang
  */
 @Repository
-class Pet2OtherLinkRepository : BaseRepoImpl<Pet2OtherLinkDO, Pet2OtherLinkDTO>() {
+open class Pet2OtherLinkRepository : BaseRepoImpl<Pet2OtherLinkDO, Pet2OtherLinkDTO>() {
 
 }

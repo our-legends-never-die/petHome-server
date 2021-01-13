@@ -1,4 +1,4 @@
-package com.github.pethome.common.util
+package com.github.pethome.mobile.bff.util
 
 /**
  * @author Chimm Huang
@@ -26,12 +26,12 @@ enum class RespEnum(var code: String, var message: String) {
     COMMON_ERROR("20000","")
     ;
 
-    fun message(message: String): com.github.pethome.common.util.RespEnum {
+    fun message(message: String): RespEnum {
         this.message = message
         return this
     }
 
-    fun code(code: String): com.github.pethome.common.util.RespEnum {
+    fun code(code: String): RespEnum {
         this.code = code
         return this
     }

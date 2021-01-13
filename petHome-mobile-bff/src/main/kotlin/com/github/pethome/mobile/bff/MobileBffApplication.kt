@@ -7,6 +7,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 import org.springframework.cloud.openfeign.EnableFeignClients
 import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.EnableAspectJAutoProxy
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
@@ -16,8 +17,9 @@ import org.springframework.web.client.RestTemplate
  */
 @RestController
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = ["com.github.pethome.api"])
+@EnableFeignClients(basePackages = ["com.github.pethome.api.resource"])
 @SpringBootApplication
+@EnableAspectJAutoProxy
 open class MobileBffApplication {
 
     @GetMapping("/health")

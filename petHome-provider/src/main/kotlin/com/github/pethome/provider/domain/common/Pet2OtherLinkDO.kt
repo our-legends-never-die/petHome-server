@@ -17,9 +17,12 @@ class Pet2OtherLinkDO : BaseDomain {
     var linkName: String? = null
     var url: String? = null
     var interfaceDocUrl: String? = null
+
     @ColumnType(jdbcType = JdbcType.VARCHAR)
     var platform: PlatformEnum? = null
     var memo: String? = null
+
+    constructor() : super()
 
     constructor(
         id: Long?,
@@ -41,17 +44,4 @@ class Pet2OtherLinkDO : BaseDomain {
         this.memo = memo
     }
 
-    constructor(
-        linkName: String?,
-        url: String?,
-        interfaceDocUrl: String?,
-        platform: PlatformEnum?,
-        memo: String?
-    ) : super() {
-        this.linkName = linkName
-        this.url = url
-        this.interfaceDocUrl = interfaceDocUrl
-        this.platform = platform
-        this.memo = memo
-    }
 }

@@ -3,12 +3,13 @@ package com.github.pethome.mobile.bff.controller.wechat
 import com.github.pethome.api.enums.PlatformEnum
 import com.github.pethome.api.resource.common.Pet2OtherLinkResource
 import com.github.pethome.api.util.RestTemplateUtil
-import com.github.pethome.common.util.RespUtil
+import com.github.pethome.mobile.bff.util.RespUtil
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
+import javax.annotation.Resource
 import javax.validation.constraints.NotEmpty
 
 /**
@@ -17,10 +18,13 @@ import javax.validation.constraints.NotEmpty
 @Validated
 @RestController
 @RequestMapping("/wechat")
-open class WechatController(
-    private val pet2OtherLinkResource: Pet2OtherLinkResource,
-    private val restTemplate: RestTemplate
-) {
+open class WechatController {
+
+    @Resource
+    open lateinit var pet2OtherLinkResource: Pet2OtherLinkResource
+
+    @Resource
+    open lateinit var restTemplate: RestTemplate
 
 
     /**

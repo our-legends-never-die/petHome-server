@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository
  * @author Chimm Huang
  */
 @Repository
-class UserRepository : BaseRepoImpl<UserDO, UserDTO>() {
+open class UserRepository : BaseRepoImpl<UserDO, UserDTO>() {
 
 }

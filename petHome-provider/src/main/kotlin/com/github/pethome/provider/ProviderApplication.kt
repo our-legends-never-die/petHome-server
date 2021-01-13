@@ -15,7 +15,7 @@ import tk.mybatis.spring.annotation.MapperScan
 @EnableDiscoveryClient
 @EnableFeignClients
 @SpringBootApplication
-@MapperScan(basePackages = ["com.github.pethome.provider.common","com.github.pethome.provider.mapper"])
+@MapperScan(basePackages = ["com.github.pethome.provider.mapper"])
 open class ProviderApplication {
 
     @GetMapping("/health")

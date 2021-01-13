@@ -1,9 +1,8 @@
-package com.github.pethome.common.util
+package com.github.pethome.mobile.bff.util
 
-import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonPropertyOrder
 import com.fasterxml.jackson.databind.ObjectMapper
-
+import java.io.Serializable
 
 /**
  * @author Chimm Huang
@@ -15,13 +14,16 @@ class RespUtil {
     private var message: String? = null
     private var data: Any? = null
 
-    constructor(data: Any?, respEnum: com.github.pethome.common.util.RespEnum) {
+    constructor(data: Any?, respEnum: RespEnum) {
         this.data = data
         this.code = respEnum.code
         this.message = respEnum.message
     }
 
     companion object {
+
+        private val objectMapper = ObjectMapper()
+
         /**
          * 请求成功：无返回值
          *
@@ -36,7 +38,7 @@ class RespUtil {
          * @return 返回成功
          */
         fun respSuccess(): String {
-            return com.github.pethome.common.util.RespUtil.Companion.resp(com.github.pethome.common.util.RespEnum.SUCCESS)
+            return resp(RespEnum.SUCCESS)
         }
 
         /**
@@ -53,25 +55,19 @@ class RespUtil {
          * @return 返回成功
          */
         fun respSuccess(data: Any?): String {
-            return com.github.pethome.common.util.RespUtil.Companion.resp(
-                data,
-                com.github.pethome.common.util.RespEnum.SUCCESS
-            )
+            return resp(data, RespEnum.SUCCESS)
         }
 
-        fun resp(respEnum: com.github.pethome.common.util.RespEnum?): String {
-            return com.github.pethome.common.util.RespUtil.Companion.resp(null, respEnum)
+        private fun resp(respEnum: RespEnum?): String {
+            return resp(null, respEnum)
         }
 
-        fun <T> resp(data: T, respEnum: com.github.pethome.common.util.RespEnum?): String {
-            var resp = com.github.pethome.common.util.RespUtil(data, respEnum!!)
-
-            // 实例化 ObjectMapper 对象
-            var objectMapper = ObjectMapper()
-            objectMapper.setSerializationInclusion(JsonInclude.Include.ALWAYS)
+        private fun <T> resp(data: T, respEnum: RespEnum?): String {
+            var resp = RespUtil(data, respEnum!!)
 
             // 将对象转成 json
-            return objectMapper.writeValueAsString(resp)
+            val writeValueAsString = objectMapper.writeValueAsString(resp)
+            return writeValueAsString
         }
     }
 }
