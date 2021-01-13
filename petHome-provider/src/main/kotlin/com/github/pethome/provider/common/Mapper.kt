@@ -1,4 +1,4 @@
-package com.github.pethome.provider.common.base
+package com.github.pethome.provider.common
 
 /**
  * @author Chimm Huang

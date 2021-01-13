@@ -1,9 +1,5 @@
 server:
   port: 10101
-  servlet:
-    context-path: /petHome-provider
-    session:
-      timeout: 7200s
 
 spring:
   application:
@@ -13,7 +9,7 @@ spring:
   cloud:
     consul:
       discovery:
-        health-check-path: ${server.servlet.context-path}/health  # 检测实例健康
+        health-check-path: /health  # 检测实例健康
         health-check-interval: 10s   # 每隔10s检查
         hostname: localhost    # 配置实例地址
         register: true  # 自动注册

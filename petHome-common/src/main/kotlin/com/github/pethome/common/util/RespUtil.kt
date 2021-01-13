@@ -15,7 +15,7 @@ class RespUtil {
     private var message: String? = null
     private var data: Any? = null
 
-    constructor(data: Any?, respEnum: RespEnum) {
+    constructor(data: Any?, respEnum: com.github.pethome.common.util.RespEnum) {
         this.data = data
         this.code = respEnum.code
         this.message = respEnum.message
@@ -36,7 +36,7 @@ class RespUtil {
          * @return 返回成功
          */
         fun respSuccess(): String {
-            return RespUtil.resp(RespEnum.SUCCESS)
+            return com.github.pethome.common.util.RespUtil.Companion.resp(com.github.pethome.common.util.RespEnum.SUCCESS)
         }
 
         /**
@@ -53,15 +53,18 @@ class RespUtil {
          * @return 返回成功
          */
         fun respSuccess(data: Any?): String {
-            return RespUtil.resp(data, RespEnum.SUCCESS)
+            return com.github.pethome.common.util.RespUtil.Companion.resp(
+                data,
+                com.github.pethome.common.util.RespEnum.SUCCESS
+            )
         }
 
-        fun resp(respEnum: RespEnum?): String {
-            return resp(null, respEnum)
+        fun resp(respEnum: com.github.pethome.common.util.RespEnum?): String {
+            return com.github.pethome.common.util.RespUtil.Companion.resp(null, respEnum)
         }
 
-        fun <T> resp(data: T, respEnum: RespEnum?): String {
-            var resp = RespUtil(data, respEnum!!)
+        fun <T> resp(data: T, respEnum: com.github.pethome.common.util.RespEnum?): String {
+            var resp = com.github.pethome.common.util.RespUtil(data, respEnum!!)
 
             // 实例化 ObjectMapper 对象
             var objectMapper = ObjectMapper()

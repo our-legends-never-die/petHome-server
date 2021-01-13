@@ -1,4 +1,4 @@
-package com.github.pethome.dto
+package com.github.pethome.api.dto
 
 import java.time.LocalDateTime
 

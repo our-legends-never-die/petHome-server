@@ -1,6 +1,6 @@
-package com.github.pethome.provider.common.base
+package com.github.pethome.provider.common
 
-import com.github.pethome.dto.BaseDTO
+import com.github.pethome.api.dto.BaseDTO
 import com.vip.vjtools.vjkit.mapper.BeanMapper
 import org.springframework.beans.factory.annotation.Autowired
 import java.lang.reflect.ParameterizedType
@@ -20,8 +20,8 @@ abstract class BaseRepoImpl<DO : BaseDomain, DTO : BaseDTO> : BaseRepo<DO, DTO> 
     init {
         val parameterizedType = javaClass.genericSuperclass as ParameterizedType
         val typeArguments = parameterizedType.actualTypeArguments
-        doClass = typeArguments[1] as Class<DO>
-        dtoClass = typeArguments[2] as Class<DTO>
+        doClass = typeArguments[0] as Class<DO>
+        dtoClass = typeArguments[1] as Class<DTO>
     }
 
     open fun mapper(): Mapper<DO> {
@@ -96,7 +96,7 @@ abstract class BaseRepoImpl<DO : BaseDomain, DTO : BaseDTO> : BaseRepo<DO, DTO> 
         mapper.updateByPrimaryKeySelective(BeanMapper.map(entry,doClass))
     }
 
-    override fun selectOne(entry: DTO): DTO {
+    override fun selectOne(entry: DTO): DTO? {
         val domain = mapper.selectOne(BeanMapper.map(entry, doClass))
         return BeanMapper.map(domain,dtoClass)
     }

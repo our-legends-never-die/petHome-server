@@ -1,4 +1,4 @@
-package com.github.pethome.provider.common.base
+package com.github.pethome.provider.common
 
 import tk.mybatis.mapper.additional.idlist.IdListMapper
 import tk.mybatis.mapper.common.BaseMapper

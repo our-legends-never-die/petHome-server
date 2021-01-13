@@ -1,6 +1,5 @@
 package com.github.pethome.mobile.bff.config
 
-import com.github.pethome.common.constant.UserLoginConstant
 import io.swagger.models.auth.In
 import java.util.*
 import org.springframework.context.annotation.Bean
@@ -53,7 +52,7 @@ open class SwaggerConfiguration(var swaggerProperties: SwaggerProperties) {
     }
 
     private fun securitySchemes(): List<SecurityScheme> {
-        val apiKey = ApiKey("ph_token", UserLoginConstant.TOKEN_NAME, In.HEADER.toValue())
+        val apiKey = ApiKey("ph_token", com.github.pethome.common.constant.UserLoginConstant.TOKEN_NAME, In.HEADER.toValue())
         return listOf(apiKey)
     }
 

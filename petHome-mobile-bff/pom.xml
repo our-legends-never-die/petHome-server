@@ -18,6 +18,11 @@
             <artifactId>petHome-common</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.pethome</groupId>
+            <artifactId>petHome-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <!-- spring boot web -->
         <dependency>

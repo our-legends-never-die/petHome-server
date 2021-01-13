@@ -1,6 +1,6 @@
-package com.github.pethome.provider.common.base
+package com.github.pethome.provider.common
 
-import com.github.pethome.dto.BaseDTO
+import com.github.pethome.api.dto.BaseDTO
 
 /**
  * @author Chimm Huang
@@ -85,7 +85,7 @@ interface BaseRepo<DO : BaseDomain, DTO : BaseDTO> {
      * @param entry 实体对象
      * @return 返回单个
      */
-    fun selectOne(entry: DTO): DTO
+    fun selectOne(entry: DTO): DTO?
 
     /**
      * 查询所有列表数据

@@ -1,4 +1,4 @@
-package com.github.pethome.provider.common.base
+package com.github.pethome.provider.common
 
 import java.time.LocalDateTime
 import javax.persistence.GeneratedValue

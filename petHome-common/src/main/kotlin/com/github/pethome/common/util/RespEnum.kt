@@ -26,12 +26,12 @@ enum class RespEnum(var code: String, var message: String) {
     COMMON_ERROR("20000","")
     ;
 
-    fun message(message: String): RespEnum {
+    fun message(message: String): com.github.pethome.common.util.RespEnum {
         this.message = message
         return this
     }
 
-    fun code(code: String): RespEnum {
+    fun code(code: String): com.github.pethome.common.util.RespEnum {
         this.code = code
         return this
     }

@@ -9,6 +9,7 @@ spring:
   application:
     name: petHome-mobile-bff
 
+
   # consul
   cloud:
     consul:
@@ -23,6 +24,9 @@ spring:
       host: localhost
       port: 8500
 
+# 爱宠回家服务提供着名称
+petHome:
+  providerName: petHome-provider
 
 
 # ===== 自定义swagger配置 ===== #
