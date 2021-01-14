@@ -4,6 +4,8 @@ import com.github.pethome.api.enums.PlatformEnum
 import com.github.pethome.api.resource.common.Pet2OtherLinkResource
 import com.github.pethome.api.util.RestTemplateUtil
 import com.github.pethome.mobile.bff.util.RespUtil
+import io.swagger.annotations.Api
+import org.springframework.http.MediaType
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -17,7 +19,8 @@ import javax.validation.constraints.NotEmpty
  */
 @Validated
 @RestController
-@RequestMapping("/wechat")
+@Api(tags = ["微信公众平台"])
+@RequestMapping(value = ["/wechat"], produces = [MediaType.APPLICATION_JSON_UTF8_VALUE])
 open class WechatController {
 
     @Resource
