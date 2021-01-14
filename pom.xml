@@ -34,6 +34,7 @@
         <vjkit.version>1.0.8</vjkit.version>
         <dozer.version>5.5.1</dozer.version>
         <springfox.version>3.0.0</springfox.version>
+        <fastjson.version>1.2.75</fastjson.version>
 
     </properties>
 
@@ -107,6 +108,7 @@
                 <artifactId>dozer</artifactId>
                 <version>${dozer.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

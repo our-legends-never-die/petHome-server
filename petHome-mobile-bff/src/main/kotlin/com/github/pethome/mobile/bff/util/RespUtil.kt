@@ -1,8 +1,8 @@
 package com.github.pethome.mobile.bff.util
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder
-import com.fasterxml.jackson.databind.ObjectMapper
-import java.io.Serializable
+import com.fasterxml.jackson.databind.json.JsonMapper
+import com.fasterxml.jackson.module.kotlin.KotlinModule
 
 /**
  * @author Chimm Huang
@@ -10,9 +10,9 @@ import java.io.Serializable
 @JsonPropertyOrder(value = ["code", "message", "data"])
 class RespUtil {
 
-    private var code: String? = null
-    private var message: String? = null
-    private var data: Any? = null
+    var code: String? = null
+    var message: String? = null
+    var data: Any? = null
 
     constructor(data: Any?, respEnum: RespEnum) {
         this.data = data
@@ -22,7 +22,7 @@ class RespUtil {
 
     companion object {
 
-        private val objectMapper = ObjectMapper()
+        private val objectMapper = JsonMapper.builder().addModule(KotlinModule()).build()
 
         /**
          * 请求成功：无返回值
