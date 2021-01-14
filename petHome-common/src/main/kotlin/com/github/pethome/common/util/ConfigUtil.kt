@@ -5,6 +5,8 @@ import java.util.HashMap
 
 
 /**
+ * 配置工具类
+ *
  * @author Chimm Huang
  */
 object ConfigUtil {
