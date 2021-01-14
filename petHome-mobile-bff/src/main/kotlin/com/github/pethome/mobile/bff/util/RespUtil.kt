@@ -58,11 +58,11 @@ class RespUtil {
             return resp(data, RespEnum.SUCCESS)
         }
 
-        private fun resp(respEnum: RespEnum?): String {
+        fun resp(respEnum: RespEnum?): String {
             return resp(null, respEnum)
         }
 
-        private fun <T> resp(data: T, respEnum: RespEnum?): String {
+        fun <T> resp(data: T, respEnum: RespEnum?): String {
             var resp = RespUtil(data, respEnum!!)
 
             // 将对象转成 json

@@ -5,13 +5,13 @@ import com.github.pethome.api.resource.common.Pet2OtherLinkResource
 import com.github.pethome.api.util.RestTemplateUtil
 import com.github.pethome.mobile.bff.util.RespUtil
 import io.swagger.annotations.Api
+import java.lang.RuntimeException
 import org.springframework.http.MediaType
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
-import javax.annotation.Resource
 import javax.validation.constraints.NotEmpty
 
 /**
@@ -21,14 +21,10 @@ import javax.validation.constraints.NotEmpty
 @RestController
 @Api(tags = ["微信公众平台"])
 @RequestMapping(value = ["/wechat"], produces = [MediaType.APPLICATION_JSON_UTF8_VALUE])
-open class WechatController {
-
-    @Resource
-    open lateinit var pet2OtherLinkResource: Pet2OtherLinkResource
-
-    @Resource
-    open lateinit var restTemplate: RestTemplate
-
+open class WechatController(
+    open val pet2OtherLinkResource: Pet2OtherLinkResource,
+    open val restTemplate: RestTemplate
+) {
 
     /**
      * 获取用户 openId
@@ -51,6 +47,6 @@ open class WechatController {
         val pet2OtherLinkDTO = pet2OtherLinkResource.selectByLinkNameAndPlatform("code2Session", PlatformEnum.WECHAT)
         val url = RestTemplateUtil.getPlatformUrl(PlatformEnum.WECHAT, pet2OtherLinkDTO.url!!)
 
-        return RespUtil.respSuccess(url)
+        throw RuntimeException("哈哈哈")
     }
 }
