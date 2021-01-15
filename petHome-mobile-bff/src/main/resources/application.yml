@@ -27,6 +27,9 @@ spring:
 # 爱宠回家服务提供着名称
 petHome:
   providerName: petHome-provider
+  wechat:
+    appId: 小程序id
+    appSecret: 小程序密钥
 
 
 # ===== 自定义swagger配置 ===== #

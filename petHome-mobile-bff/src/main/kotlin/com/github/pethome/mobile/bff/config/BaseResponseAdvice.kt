@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice
  * @author Chimm Huang
  */
 @RestControllerAdvice(basePackages = ["com.github.pethome.mobile.bff.controller"])
-class ControllerResponseAdvice : ResponseBodyAdvice<Any> {
+class BaseResponseAdvice : ResponseBodyAdvice<Any> {
 
     companion object {
         private val objectMapper = JsonMapper.builder().addModule(KotlinModule()).build()
