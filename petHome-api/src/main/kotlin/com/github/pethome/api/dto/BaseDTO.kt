@@ -11,9 +11,9 @@ open class BaseDTO {
     var creatorId: Long? = null
     var gmtModified: LocalDateTime? = null
     var modifierId: Long? = null
-    var delFlag: Boolean? = null
+    var delFlag: Int? = null
 
-    constructor(id: Long?, gmtCreate: LocalDateTime?, creatorId: Long?, gmtModified: LocalDateTime?, modifierId: Long?, delFlag: Boolean?) {
+    constructor(id: Long?, gmtCreate: LocalDateTime?, creatorId: Long?, gmtModified: LocalDateTime?, modifierId: Long?, delFlag: Int?) {
         this.id = id
         this.gmtCreate = gmtCreate
         this.creatorId = creatorId

@@ -10,7 +10,7 @@ import javax.persistence.Id
  */
 open class BaseDomain {
 
-    constructor(id: Long?, gmtCreate: LocalDateTime?, creatorId: Long?, gmtModified: LocalDateTime?, modifierId: Long?, delFlag: Boolean?) {
+    constructor(id: Long?, gmtCreate: LocalDateTime?, creatorId: Long?, gmtModified: LocalDateTime?, modifierId: Long?, delFlag: Int?) {
         this.id = id
         this.gmtCreate = gmtCreate
         this.creatorId = creatorId
@@ -29,5 +29,5 @@ open class BaseDomain {
     var creatorId: Long? = null
     var gmtModified: LocalDateTime? = null
     var modifierId: Long? = null
-    var delFlag: Boolean? = null
+    var delFlag: Int? = null
 }

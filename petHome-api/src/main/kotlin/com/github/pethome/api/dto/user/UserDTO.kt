@@ -12,7 +12,7 @@ class UserDTO : BaseDTO {
     var phoneNo: String? = null
     var nickname: String? = null
 
-    constructor(id: Long?, gmtCreate: LocalDateTime?, creatorId: Long?, gmtModified: LocalDateTime?, modifierId: Long?, delFlag: Boolean?, userId: String?, wechatOpenId: String?, phoneNo: String?, nickname: String?) : super(id, gmtCreate, creatorId, gmtModified, modifierId, delFlag) {
+    constructor(id: Long?, gmtCreate: LocalDateTime?, creatorId: Long?, gmtModified: LocalDateTime?, modifierId: Long?, delFlag: Int?, userId: String?, wechatOpenId: String?, phoneNo: String?, nickname: String?) : super(id, gmtCreate, creatorId, gmtModified, modifierId, delFlag) {
         this.userId = userId
         this.wechatOpenId = wechatOpenId
         this.phoneNo = phoneNo

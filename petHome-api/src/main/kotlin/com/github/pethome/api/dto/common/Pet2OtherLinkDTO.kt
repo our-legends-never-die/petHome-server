@@ -22,7 +22,7 @@ class Pet2OtherLinkDTO : BaseDTO {
         creatorId: Long?,
         gmtModified: LocalDateTime?,
         modifierId: Long?,
-        delFlag: Boolean?,
+        delFlag: Int?,
         linkName: String?,
         url: String?,
         interfaceDocUrl: String?,

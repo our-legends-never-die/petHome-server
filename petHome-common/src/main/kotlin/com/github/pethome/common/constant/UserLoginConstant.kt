@@ -9,6 +9,7 @@ object UserLoginConstant {
 
     const val TOKEN_NAME = "ph_token"
     const val TOKEN_PREFIX = "ph:user:token:"
-    const val USER_ID_PREFIX = "ph:user:id:"
+    const val USER_TOKEN_PREFIX = "ph:user:token:userId:"
+    const val USER_SESSION_KEY_PREFIX = "ph:user:sessionKey:userId"
 
 }

@@ -8,8 +8,8 @@ server:
 spring:
   application:
     name: petHome-mobile-bff
-
-
+  main:
+    allow-bean-definition-overriding: true
   # consul
   cloud:
     consul:
@@ -30,6 +30,12 @@ petHome:
   wechat:
     appId: 小程序id
     appSecret: 小程序密钥
+  login:
+    timeout: 30
+    timeUnit: DAYS
+
+
+
 
 
 # ===== 自定义swagger配置 ===== #
